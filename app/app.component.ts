@@ -5,7 +5,7 @@ import { Food } from './food.model';
 
 @Component({
   selector: 'my-app',
-  // directives: [FoodListComponent],
+  directives: [FoodListComponent],
   template: `
     <div class="container">
       <h2>Meal Logging App!</h2>

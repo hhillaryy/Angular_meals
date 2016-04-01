@@ -1,9 +1,9 @@
 import { Component, EventEmitter } from 'angular2/core';
-// import {FoodComponent} from './food.component';
+import {FoodComponent} from './food.component';
 import { Food } from './food.model';
 import {EditFoodDetailsComponent} from './edit-food-details.component';
 import {NewFoodComponent} from './new-food.component';
-// import {HealthyPipe} from './healthy.pipe';
+import {HealthyPipe} from './healthy.pipe';
 
 
 
@@ -12,7 +12,7 @@ import {NewFoodComponent} from './new-food.component';
   inputs: ['foodList'],
   outputs: ['onFoodSelect'],
   directives: [FoodComponent, EditFoodDetailsComponent, NewFoodComponent],
-  // pipes: [HealthyPipe],
+  pipes: [HealthyPipe],
   template: `
   <select (change)="onChange($event.target.value)" class="filter">
   <option value="all" selected="selected">Show All</option>
@@ -44,7 +44,7 @@ export class FoodListComponent{
     console.log("Food name: " + clickedFood.name + " Notes: " + clickedFood.notes + " Calories: " + clickedFood.calories );
     this.selectedFood = clickedFood;
     this.onFoodSelect.emit(clickedFood);
-    this.foodClickedNotes = clickedFood.notes;
+    // this.foodClickedNotes = clickedFood.notes;
   }
   createFood(newFoodInfo: string[]): void {
     this.foodList.push(
